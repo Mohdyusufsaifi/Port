@@ -7,14 +7,14 @@ exports.sendEmail=(req, res) => {
         host: 'smtp.ethereal.email',
         port: 587,
         auth: {
-            user: 'euna86@ethereal.email',
-            pass: '17PsGWtXTJe6Zrqws4'
+            user: 'frederik.kovacek75@ethereal.email',
+            pass: 'b1ZVaXG2t6Czt5dyuu'
         }
     });
 
     const mailOptions = {
-        from: "azeem.khan@locofast.com",
-        to: "azeem.khan@locofast.com",
+        from: "frederik.kovacek75@ethereal.email",
+        to: "azeemsaifi38180@gmail.com",
         subject:"Someone Contact your site",
         html: "<p>Name: "+req.body.name+"</p> Email: "+req.body.email+"<p> Phone Number: "+req.body.number+
         "<p> Message: "+req.body.message

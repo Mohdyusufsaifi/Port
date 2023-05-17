@@ -12,26 +12,16 @@ const { google } = require('googleapis');
 //             pass: 'b1ZVaXG2t6Czt5dyuu'
 //         }
 //     });
-exports.sendEmail=async(req,res)=> {
-    const clientId = '402509665383-akkt7dce3buasdbr2mlho53u9jsvqtvg.apps.googleusercontent.com';
-    const clientSecret = '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';
-    const refreshToken = 'https://oauth2.googleapis.com/token';
-  
-    const oAuth2Client = new google.auth.OAuth2(clientId, clientSecret);
-    oAuth2Client.setCredentials({ refresh_token: refreshToken });
-  
-    const accessToken = await oAuth2Client.getAccessToken();
-  
+exports.sendEmail = async (req, res) => {
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        type: 'OAuth2',
-        user: 'azeemsaifi38180@gmail.com',
-        clientId: clientId,
-        clientSecret: clientSecret,
-        refreshToken: refreshToken,
-        accessToken: accessToken
-      }
+        service: 'gmail',
+        auth: {
+            type: 'OAuth2',
+            user: 'azeemsaifi38180@gmail.com',
+            clientId: '402509665383-akkt7dce3buasdbr2mlho53u9jsvqtvg.apps.googleusercontent.com',
+            clientSecret: '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',
+            accessToken :'ya29.a0AWY7CkkvFEUzilFmh0UAL1SPyc0LFY4su2rOxkBSLPUr0uI5XDgY6dpsceUZonYCnmxNsQzjfbo5Gdf8whE9HiicbL2PH7J6tSgjTTVcaDWP8IuW4VKVgx4bLE-zcv97Vv5E4_I888c0Ms588HYHZMJHafUum4AaCgYKAccSARESFQG1tDrpNwqiEGe9qxJGx9nM3BMuEA0166',
+        }
     });
 
     const mailOptions = {

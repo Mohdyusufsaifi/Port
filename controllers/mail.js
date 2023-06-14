@@ -10,7 +10,7 @@ exports.sendEmail = async (req, res) => {
    );
     oauth2Client.setCredentials(
         {
-            refresh_token:"1//04E9kR6QXWw6bCgYIARAAGAQSNwF-L9Ir6cpQEVtAzbnrAhr3vN3RAOuuLGCMItq1AYZlD2j7YEP3D4j0-RIUImk0ml2D4lGTqVc"
+            refresh_token:"1//04crQNYGvTA2QCgYIARAAGAQSNwF-L9IrJH3QHoL1DAnkpgTPHDpd_NnA_CaqqfvYqabPKcGx7c54s78cFrcCZ6EydRWxJD4V_NE"
         });
     const accessToken = oauth2Client.getAccessToken()
     const transporter = nodemailer.createTransport({
@@ -20,9 +20,12 @@ exports.sendEmail = async (req, res) => {
             user: 'azeemsaifi38180@gmail.com',
             clientId:"402509665383-akkt7dce3buasdbr2mlho53u9jsvqtvg.apps.googleusercontent.com",
             clientSecret:"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",
-            refreshToken:"1//04E9kR6QXWw6bCgYIARAAGAQSNwF-L9Ir6cpQEVtAzbnrAhr3vN3RAOuuLGCMItq1AYZlD2j7YEP3D4j0-RIUImk0ml2D4lGTqVc",
+            refreshToken:"1//04crQNYGvTA2QCgYIARAAGAQSNwF-L9IrJH3QHoL1DAnkpgTPHDpd_NnA_CaqqfvYqabPKcGx7c54s78cFrcCZ6EydRWxJD4V_NE",
             accessToken: accessToken
-        }
+        },
+        tls: {
+            rejectUnauthorized: false
+        }      
     });
     const mailOptions = {
         from: "frederik.kovacek75@ethereal.email",

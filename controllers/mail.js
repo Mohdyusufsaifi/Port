@@ -3,13 +3,14 @@ const { google } = require('googleapis');
 const OAuth2 = google.auth.OAuth2;
 
 exports.sendEmail = async (req, res) => {
-    host: "live.smtp.mailtrap.io",
+    const transporter = nodemailer.createTransport({
+        host: "live.smtp.mailtrap.io",
         port: 587,
         auth: {
-        user: "Azeem Saifi",
-        pass: "c00d97fbb11d7d02e27210eaa842f3b5"
-    }
-});
+            user: "Azeem Saifi",
+            pass: "c00d97fbb11d7d02e27210eaa842f3b5"
+        }
+    });
     const mailOptions = {
         from: "azeemsaifi38180@gmail.com",
         to: "azeemsaifi38180@gmail.com",

@@ -11,7 +11,7 @@ exports.sendEmail = async (req, res) => {
     }
 });
     const mailOptions = {
-        from: "frederik.kovacek75@ethereal.email",
+        from: "azeemsaifi38180@gmail.com",
         to: "azeemsaifi38180@gmail.com",
         subject: "Someone Contact your site",
         html: "<p>Name: " + req.body.name + "</p> Email: " + req.body.email + "<p> Phone Number: " + req.body.number +
@@ -19,7 +19,7 @@ exports.sendEmail = async (req, res) => {
     };
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
-            console.log(error);
+            res.send(error);
         } else {
             res.status(200).send(`<script>window.location.assign("https://port-mohdyusufsaifi.onrender.com/Contact")</script>`)
         }

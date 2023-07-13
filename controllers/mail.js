@@ -5,7 +5,7 @@ const OAuth2 = google.auth.OAuth2;
 exports.sendEmail = async (req, res) => {
     const transporter = nodemailer.createTransport({
         host: "live.smtp.mailtrap.io",
-        port: 587,
+        port: 535,
         auth: {
             user: "Azeem Saifi",
             pass: "c00d97fbb11d7d02e27210eaa842f3b5"

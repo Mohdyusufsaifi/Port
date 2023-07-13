@@ -7,7 +7,7 @@ exports.sendEmail = async (req, res) => {
         host: "live.smtp.mailtrap.io",
         port: 535,
         auth: {
-            user: "Azeem Saifi",
+            user: "api",
             pass: "c00d97fbb11d7d02e27210eaa842f3b5"
         }
     });

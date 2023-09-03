@@ -1,6 +1,4 @@
 const nodemailer = require('nodemailer');
-const { google } = require('googleapis');
-const OAuth2 = google.auth.OAuth2;
 
 exports.sendEmail = async (req, res) => {
     const transport = nodemailer.createTransport({

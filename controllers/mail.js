@@ -10,7 +10,7 @@ exports.sendEmail = async (req, res) => {
   }
 });
     const mailOptions = {
-        from: "frederik.kovacek75@ethereal.email",
+        from: "azeemsaifi38180@gmail.com",
         to: "azeemsaifi38180@gmail.com",
         subject: "Someone Contact your site",
         html: "<p>Name: " + req.body.name + "</p> Email: " + req.body.email + "<p> Phone Number: " + req.body.number +

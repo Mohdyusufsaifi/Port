@@ -3,30 +3,14 @@ const { google } = require('googleapis');
 const OAuth2 = google.auth.OAuth2;
 
 exports.sendEmail = async (req, res) => {
-    const oauth2Client = new OAuth2(
-        "402509665383-akkt7dce3buasdbr2mlho53u9jsvqtvg.apps.googleusercontent.com",
-        "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",
-        "https://developers.google.com/oauthplayground"
-   );
-    oauth2Client.setCredentials(
-        {
-            refresh_token:"1//04Br-UWqQRCcmCgYIARAAGAQSNwF-L9IrgBmzKcyyuIFMYmngGTjXwzOY2tugbldYz-luIsEOCZaLTr6H-eYrDL3lkxGgdpp6img"
-        });
-    const accessToken = oauth2Client.getAccessToken()
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            type: 'OAuth2',
-            user: 'azeemsaifi38180@gmail.com',
-            clientId:"402509665383-akkt7dce3buasdbr2mlho53u9jsvqtvg.apps.googleusercontent.com",
-            clientSecret:"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",
-            refreshToken:"1//04Br-UWqQRCcmCgYIARAAGAQSNwF-L9IrgBmzKcyyuIFMYmngGTjXwzOY2tugbldYz-luIsEOCZaLTr6H-eYrDL3lkxGgdpp6img",
-            accessToken: accessToken
-        },
-        tls: {
-            rejectUnauthorized: false
-        }      
-    });
+    const transport = nodemailer.createTransport({
+  host: "live.smtp.mailtrap.io",
+  port: 587,
+  auth: {
+    user: "api",
+    pass: "e7da58605caeb8281177b28d971fde0c"
+  }
+});
     const mailOptions = {
         from: "frederik.kovacek75@ethereal.email",
         to: "azeemsaifi38180@gmail.com",

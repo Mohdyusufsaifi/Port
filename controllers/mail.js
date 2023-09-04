@@ -2,11 +2,10 @@ const nodemailer = require('nodemailer');
 
 exports.sendEmail = async (req, res) => {
     const transport = nodemailer.createTransport({
-  host: "live.smtp.mailtrap.io",
-  port: 587,
+  service:"gmail",
   auth: {
-    user: "api",
-    pass: "e7da58605caeb8281177b28d971fde0c"
+    user: "azeemsaifi38180@gmail.com",
+    pass: "sddvgrpgpmgokkjj"
   }
 });
     const mailOptions = {
